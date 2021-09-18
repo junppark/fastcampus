@@ -1,0 +1,21 @@
+` : backtick, grave
+~ : tilde
+! : exclamation mark
+@ : at sign
+# : sharp, number sign
+$ : dollor
+^ : caret
+& : ampersand
+* : asterisk
+- : hyphen, dash
+_ : underscore, low dash
+' : apostrophe
+: : colon
+; : semicolon
+/ : slash
+| : vertical bar
+\ : back slash
+() : parenthesis
+{} : brace
+[] : bracket
+<> : angle brakcet

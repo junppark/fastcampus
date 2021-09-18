@@ -1,0 +1,50 @@
+<div 1>
+  <div 2>
+    <div 3></div 3>
+  </div 2>
+</div 1>
+
+from div3 pov
+--> div1, div2 상위요소
+from div2 pov
+--> div1 부모, div2 자식
+from div1 pov
+--> div2, div3 하위요소
+
+<tag (/) > --> empty tag
+prefer to put /.
+
+<tag attribute="value">element</tag>
+--> advanced function
+
+요소가 화면에 출력되는 특성, 크게 2가지구분
+inline: 글자를 만들기 위한 요소들
+span --> 대표적인 inline 요소. 콘텐츠 영역 설정
+포함한 컨텐츠 크기만큼 자동으로 줄어듬!
+--> style width, height 사용해도 반응 x
+--> margin시 좌우만 반응, padding시 좌우만 반응
+<span>
+  <div>
+  </div>
+</span> --> 사용 불가, div 는 block요소이기 때문
+<span>
+  <span>
+  </span>
+</span> --> 사용 가능
+==> inline요소 안에는 block요소를 사용 불가
+
+<span>hello</span>
+<span>world</span>
+--> 띄어쓰기 생성
+<span>hello</span><span>world</span>
+--> 띄어쓰기 x
+
+block: 상자(layout)를 만들기 위한 요소들
+div --> 대표적인 block 요소. 콘텐츠 영역을 설정하는 용도
+요소가 수직으로 쌓임
+좌우는 부모요소의 크기만큼 자동으로 늘어남
+상하는 포함한 콘텐츠 크기만큼 자동으로 줄어듬
+<div>
+  <div></div>
+</div> --> 가능
+<div><span></span></div> --> 가능

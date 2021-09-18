@@ -1,0 +1,8 @@
+opensource.org
+
+for public or you can use it for buis
+
+apache license
+mit license (show it is from mit license)
+bsd license (same as mit)
+beerware (buy beer for the developer)

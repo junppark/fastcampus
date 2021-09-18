@@ -1,0 +1,26 @@
+global attribute
+
+title --> 마우스 갖다대면 팁나옴
+<태그 title="설명"></태그>
+
+style --> 요소에 적용할 css
+<태그 style="스타일"></태그>
+
+class --> 요소를 지칭하는 중복 가능한 이름
+<태그 class="이름"></태그>
+
+id --> 요소를 지칭하는 고유한 이름
+<태그 id="이름"></태그>
+
+data --> 요소에 데이터를 지정
+<태그 data-이름="데잍"></태그>
+html
+<div data-fruit-name="apple">apple</div>
+<div data-fruit-name="banana">banana</div>
+js
+const els = document.querySelectorAll('div')
+els.forEach(el => {
+  console.log(el.dataset.fruitName)
+})
+
+

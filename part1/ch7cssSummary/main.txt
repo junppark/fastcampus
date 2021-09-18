@@ -1,0 +1,159 @@
+선택자 {
+  속성: 값;
+}
+선택자 --> css를 적용할 대상
+속성 --> 스타일의 속성
+값 --> 스타일의 값
+
+
+1. css 선언 방식
+
+-내장방식
+<style>
+  div {
+    color: red;
+    margin: 20px;
+  }
+</style>
+
+-링크방식
+병렬방식
+<link rel="stylesheet" href="./main.css">
+
+-인라인 방식
+<div style="color: red; margin: 20px;"></div>
+
+-@import 방식
+css문서 안에서 또 다른 css문서를 가져와 연결하는 방식. 직렬로 연결
+index.html
+<link rel="stylesheet" href="./main.css">
+
+main.css
+@import url("./box.css)
+div {
+  color: red;
+  margin: 20px;
+}
+
+box.css
+.box {
+  background-color: red;
+  padding: 20px;
+}
+
+
+2. css 선택자
+기본 --> *, tag, class, id
+* { --> 모든 요소를 선택
+  color: red;
+}
+tag { --> 태그 이름이 tag인 요소 선택
+  color: red;
+}
+.class { --> class속성의 값이 class인 요소 선택
+  color: orange
+}
+#id { --> id속성의 값이 id인 요소 선택
+  color: blue;
+}
+
+복합
+span.orange{ --> 선택자 abc와 def를 동시에 만족하는 요소 선택
+  color: red;
+}
+ul > .orange{ --> 선택자 abc의 자식요소 def 선택
+  color: red;
+}
+div .orange{ --> 선택자 abc의 하위요소 def 선택
+  color: red;
+}
+
+.orange + li { --> 선택자 abc의 다음 형제 요소 def 하나를 선택
+  color: red;
+}
+  <ul>
+    <li>딸기</li>
+    <li>수박</li>
+    <li class="orange">오렌지</li>
+    <li>망고</li> --> 빨간색됨
+    <li>사과</li>
+  </ul>
+
+.orange ~ li{ --> 선택자 abc의 다음 형제요소 def모두를 선택.
+  color: red;
+}
+  <ul>
+    <li>딸기</li>
+    <li>수박</li>
+    <li class="orange">오렌지</li>
+    <li>망고</li> --> 빨간색됨
+    <li>사과</li> --> 빨간색됨
+  </ul>
+
+가상 클래스
+abc:hover --> 선택자 abc요소에 마우스커서가 올라가 있는 동안 선택
+abc:active --> 선택자 abc요소에 마우스를 클릭하고 있는 동안 선택
+abc:focus --> 선택자 abc요소가 포커스되면 선택
+abc:first-child --> 선택자 abc가 형제 요소 중 첫째라면 선택
+abc:last-child --> 선택자 abc가 형제 요소 중 막내라면 선택
+abc:nth-child(n) --> 선택자 abc가 형제 요소 중 (n)째라면 선택
+abc:nth-child(2n) --> 선택자 abc가 형제 요소 중 (2n)째라면 선택 --> n은 0부터 시작
+abc:not(xyz) --> 선택자 xyz가 아닌 abc요소 선택
+
+가상 요소
+abc:before --> 선택자 abc요소의 내부 앞에 내용을 삽입 (inline)
+.box::before{ 
+  content: "앞";
+}
+<div class="box">
+  content
+</div>
+=> 앞! content!
+
+.box::after{
+  content: "뒤!"
+}
+<div class="box">
+  content
+</div>
+=> content! 뒤!
+
+속성
+[abc] --> 속성 abc를 포함한 요소 선택
+[abc="xyz"] --> 속성 abc를 포함하고 값이 xyz인 요소 선택
+
+
+스타일상속
+상속되는 css속성들 --> 모두 글자/문자 관련 속성들! (모든 글자/문자는 아님)
+강제상속
+.parent{
+  width: 300px;
+  height: 500px;
+  background-color: orange;
+}
+
+.child{
+  width:100px;
+  height: inherit;
+  background-color: inherit;
+  position: fixed;
+  top: 100px;
+  right: 10px;
+}
+
+
+선택자 우선순위
+1, 점수가 높은 선언이 우선함
+2, 점수가 같으면, 가장 마지막에 해석된 선언이 우선함
+div {color: red !important;} --> !important 999999999점
+#color_yellow {color: yellow;} --> id선택자 100점
+.color_green {color: green;} --> class선택자 10점
+div {color: blue;} --> tag선택자 1점
+* {color: darkblue;} --> 전체선택자 0점
+body {color: violet;} --> 상속 x
+<div>
+  id="color_yellow"
+  class="color_green" 
+  style="color: orange" --> 인라인 선언 1000점
+  hello world
+</div>

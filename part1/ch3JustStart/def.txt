@@ -1,0 +1,23 @@
+<!DOCTYPE html>  
+--> assign Document's html version (html5 is standard)
+--> document type definition
+
+<html lang="en">
+--> shows where html doc is started and ended
+
+  <head>
+  --> invisible infos (css, js, ...)
+
+    <meta charset="UTF-8"> --> methods for incoding character
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> --> for mobile viewer
+    --> provides vary html doc infos for search engines and browser 
+    such as contents, author, keywords, ...
+
+    <title>Document</title>
+  </head>
+  
+  <body>
+  --> visible info (logo, header, footer, img, ...)
+    
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script defer src="./main.js"></script>
+</head>
+<body>
+  <div>
+    <a href="https://www.naver.com">naver</a>
+    <a href="http://www.google.com" target="_blank">google</a><br>
+    target="_blank": 새 탭에서 열어라
+  </div><br>
+  
+
+  <div>
+    <input type="text" />
+    input : inline-block 요소. 인라인 블락 특성 둘다가짐<br>
+    <input type="text" value="sangjunr"/>
+    value: 미리 입력된 값(데이터)<br>
+    <input type="text" placeholder ="put your name!"/>
+    placeholder: 사용자가 입력할 값(데이터)의 힌트<br>
+    <input type="text" disabled/>
+    disabled: 입력요소 비활성화<br>
+  </div><br>
+
+
+  <div>
+    <label>
+      <input type="checkbox"/> apple
+    </label><br>
+    label: inline요소<br>
+    checkbox: 사용자에게 체크 여부를 입력받음<br>
+    <label>
+      <input type="checkbox"/> banana
+    </label><br>
+    <label>
+      <input type="checkbox" checked/> caramel
+    </label><br>
+    checked: 체크박스 미리 체크됨
+  </div><br>
+
+  <div>
+    <label>
+      <input type="radio" name="fruits"/> apple
+    </label>
+    <label>
+      <input type="radio" name="fruits"/> banana
+    </label><br>
+    fruits란 이름의 그룹. <br>
+    사용자에게 체크여부를 그룹에서 1개만 입력 받음!
+  </div><br>
+  
+  <div>
+    <table>
+      <tr>
+        <td>a</td><td>b</td>
+      </tr>
+      <tr>
+        <td>c</td><td>d</td>
+      </tr>
+    </table>
+    table: 표 요소, 행(row)와 열(column)의 집합.<br>
+    tr: table row 행<br>
+    td: table data 열
+  </div>
+
+  <div>
+    <div data-fruit-name="apple">apple</div>
+    <div data-fruit-name="banana">banana</div>
+  </div>
+</body>
+</html>
